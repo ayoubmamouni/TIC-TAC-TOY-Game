@@ -18,6 +18,8 @@ let [firstPlayer, secondPlayer, count] = [
 ]
 
 
+
+
 function check(array) {
     let finalResult = false;
     for (let item of winner) {
