@@ -17,9 +17,6 @@ let [firstPlayer, secondPlayer, count] = [
     0
 ]
 
-
-
-
 function check(array) {
     let finalResult = false;
     for (let item of winner) {
@@ -40,9 +37,12 @@ function winnerplayer(p) {
     modal.classList.add('winner')
     modal.appendChild(player)
     replay.appendChild(document.createTextNode('Replay'))
-    replay.onclick = () => {
-        rep()
-    };
+    replay.addEventListener('click', () => {
+        firstPlayer = []
+        secondPlayer = []
+        count = 0;
+        window.location.reload()
+    })
     modal.appendChild(replay)
     document.body.appendChild(modal)
 }
@@ -55,27 +55,17 @@ function draw() {
             this.classList.add('x')
             firstPlayer.push(Number(this.dataset.index))
             if (check(firstPlayer)) {
-                winnerplayer('Congrats player one you win')
+                winnerplayer('X is winner')
             }
         } else {
             this.classList.add('o')
             secondPlayer.push(Number(this.dataset.index))
             if (check(secondPlayer)) {
-                winnerplayer('Congrats player twi you win')
+                winnerplayer('O is winner')
             }
         }
         count === 9 && winnerplayer('Draw')
     }
 
 }
-
-
-function rep() {
-    const w = document.querySelector('.winner')
-    firstPlayer = []
-    secondPayer = []
-    count = 0;
-    w.remove;
-}
-
 cards.forEach(card => card.addEventListener('click', draw))
