@@ -1,0 +1,76 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bf360c;
+}
+.container {
+  width: 500px;
+  height: 500px;
+  background-color: #e64a19;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 33% 33% 33%;
+  grid-auto-rows: 33% 33% 33%;
+}
+.card {
+  cursor: pointer;
+  position: relative;
+  background-color: #bf360c;
+}
+.card::before {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 8rem;
+}
+
+.card.x::before {
+  content: "X";
+}
+.card.o::before {
+  content: "O";
+}
+
+.winner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 400px;
+  height: 200px;
+  padding: 20px 40px;
+  background-color: #fff;
+  font-size: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  animation: animate 500ms linear;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.winner button {
+  margin-top: 20px;
+  width: 80px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: white;
+  background: #bf360c;
+  border-radius: 20px;
+}
