@@ -11,7 +11,11 @@ const winner = [
     [3, 6, 9]
 ]
 
-let [firstPlayer, secondPlayer, count] = [
+let [
+    firstPlayer,
+    secondPlayer,
+    count
+] = [
     [],
     [],
     0
@@ -37,16 +41,10 @@ function winnerplayer(p) {
     modal.classList.add('winner')
     modal.appendChild(player)
     replay.appendChild(document.createTextNode('Replay'))
-    replay.addEventListener('click', () => {
-        firstPlayer = []
-        secondPlayer = []
-        count = 0;
-        window.location.reload()
-    })
+    replay.addEventListener('click', () => window.location.reload())
     modal.appendChild(replay)
     document.body.appendChild(modal)
 }
-
 
 function draw() {
     if (this.classList == 'card') {
