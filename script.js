@@ -62,9 +62,7 @@ function draw() {
                 winnerplayer('Congrats player twi you win')
             }
         }
-        if (count === 9) {
-            winnerplayer('Draw')
-        }
+        count === 9 && winnerplayer('Draw')
     }
 
 }
