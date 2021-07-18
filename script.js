@@ -13,12 +13,14 @@ const winner = [
 
 let [firstPlayer, secondPlayer, count] = [
     [],
-    [], 0
+    [],
+    0
 ]
+
 
 function check(array) {
     let finalResult = false;
-    for (let items of winners) {
+    for (let item of winner) {
         let res = item.every(val => array.indexOf(val) !== -1)
         if (res) {
             finalResult = true;
